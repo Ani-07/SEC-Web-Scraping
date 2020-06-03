@@ -6,6 +6,7 @@ Created on Tue Jun  2 14:39:04 2020
 """
 from bs4 import BeautifulSoup
 import requests
+import json
 #import pandas as pd
 
 # Objective - To scrape SEC website to find the document links to quarterly - 10Q filings
@@ -90,8 +91,9 @@ for row in doc_table[0].find_all('tr'):
         # append dictionary to master list
         master_list.append(file_dict)
 
-
-
+file1 = open("aapl_links.json","a")
+file1.write(json.dumps(master_list))
+file1.close()    
 
 
 
