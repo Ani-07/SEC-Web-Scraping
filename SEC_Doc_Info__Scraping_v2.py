@@ -7,16 +7,23 @@ Created on Tue Jun  2 09:06:25 2020
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import json
+import numpy as np
+
 
 # We shall use Apple Inc as an example for this exercise
 
 # Objective - Download Balance Sheet and Profit and Loss Account of the Apple 
 # for the previous two quarters
 
-def doc_info(link):
-    
-    link = aapl_links[5]['links']
+def unq_count(LIST):
+    result = {}
+    for i in LIST:
+        if i not in result.keys():
+            result[i] = [j for j in range(len(LIST)) if LIST[j] == i ]
+    return result
+
+
+def doc_info(link, org_format, a):
     
     content = requests.get(link).json()
     
@@ -45,7 +52,6 @@ def doc_info(link):
     balance_sheet ='CONSOLIDATED BALANCE SHEETS'
     wrong_name = '(Parenthetical)'
     operations = 'CONSOLIDATED STATEMENTS OF OPERATIONS'
-    income = "CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME"
         
     master_reports = []
     
@@ -67,18 +73,6 @@ def doc_info(link):
             # append the dictionary to the master list.
             master_reports.append(report_dict)
             
-        elif income in report.shortname.text and wrong_name not in report.shortname.text:
-            print(report.shortname.text)
-        
-            report_dict = {}
-            report_dict['name_short'] = report.shortname.text
-            report_dict['name'] = 'Income'
-            report_dict['position'] = report.position.text
-            report_dict['category'] = report.menucategory.text
-            report_dict['url'] = base_url + report.htmlfilename.text
-        
-            # append the dictionary to the master list.
-            master_reports.append(report_dict)
         
         elif operations in report.shortname.text:
             print(report.shortname.text)
@@ -107,93 +101,73 @@ def doc_info(link):
     
     
     df_dict["Balance_Sheet"] = df_dict["Balance_Sheet"].columns.to_frame().T.append(df_dict["Balance_Sheet"], ignore_index=True)
-    df_dict["Income"] = df_dict["Income"].columns.to_frame().T.append(df_dict["Income"], ignore_index=True)
     df_dict["Operations"] = df_dict["Operations"].columns.to_frame().T.append(df_dict["Operations"], ignore_index=True)
     
-    bs = df_dict["Balance_Sheet"].iloc[:,1]
-    inc = df_dict["Income"].iloc[:,1]
-    op = df_dict['Operations'].iloc[:,1]
+    bs = df_dict["Balance_Sheet"]
+    op = df_dict['Operations']
+
+    op = op.drop(op.columns[2:len(op.columns)], axis = 1)
+    bs = bs.drop(bs.columns[2:len(bs.columns)], axis = 1)
+
+    op.columns = bs.columns
+
+    fin = op.append(bs, ignore_index = True)
     
-    inc.name = bs.name
-    op.name = bs.name
+    list_names = [i.lower().replace("'", "") for i in list(fin.iloc[:,0])]
+    List_D1 = [i.lower().replace("'", "") for i in list(fin.iloc[:,0])]
     
-    fin = op.append(inc, ignore_index = True)
-    fin = fin.append(bs, ignore_index = True)
+    list_names = [i.lower().replace(a, "") for i in list_names]
+    List_D1 = [i.lower().replace(a, "") for i in List_D1]
     
-    return fin, bs.name
+    list_values = list(fin.iloc[:,1])
     
-
-df_finance_info[bs.name] = fin
-
-
-op = df_dict["Operations"]
-
-op.columns = [1,2,3,4,5]
-
-
-op = op.drop(op.columns[2:5], axis = 1)
-
-
-
-bs = df_dict["Balance_Sheet"]
-inc = df_dict["Income"]
-op = df_dict['Operations']
-
-op.columns = ['1','2','3']
-
-bs.columns = ['1','2','3']
-inc.columns = op.columns
-
-op = op.drop(op.columns[2:5], axis = 1)
-bs = bs.drop(bs.columns[2:3], axis = 1)
-inc = inc.drop(inc.columns[2:5], axis = 1)
-
-fin = op.append(inc, ignore_index = True)
-fin = fin.append(bs, ignore_index = True)
-
-List_D = list(fin['1'])
-
-result = {}
-
-for i in List_D:
-    if i not in result.keys():
-        result[i] = [j for j in range(len(List_D)) if List_D[j] == i]
-
-print(result)
-
-
-List_E = list(df_finance_info['Particulars'])
-
-result2 = {}
-
-for i in List_E:
-    if i not in result2.keys():
-        result2[i] = [j for j in range(len(List_E)) if List_E[j] == i]
-
-result2
-
-n = 0
-avl = []
-mismat = []
-unavl = []
-
-for key in result.keys():
-    if key in result2.keys():
-        if result[key] == result2[key]:
-            avl.append(n)
-            n += 1
-            print(key)
-            print(1)
-        elif :
-            mismat.append(n)
-            n += 1
-            print(key)
-            print(2)
-    else:
-        unavl.append(n)
-        n += 1
-        print(key)
-        print(3)
-
+    for item in list_names:
+        if item not in org_format:
+            if any(s in item for s in org_format):    
+                for tag in org_format:
+                    if tag in item:
+                        ind = List_D1.index(item)
+                        List_D1[ind] = tag
+                        
+                        break
             
+            else:
+                ind = List_D1.index(item)
+                del List_D1[ind]
+                del list_values[ind]
+    
+    dict_D1 = unq_count(List_D1)
+    dict_format = unq_count(org_format)
+
+    for key in dict_format.keys():
+        if key in dict_D1.keys():
+            if len(dict_format[key]) < len(dict_D1[key]):
+                ind = list(set(dict_D1[key])-set(dict_format[key]))        
+                n = 0
+                for i in ind:
+                    i = i - n
+                    del List_D1[i]
+                    del list_values[i]
+                    n += 1
             
+            dict_D1 = unq_count(List_D1)
+        
+    for key in dict_format.keys():
+        if key not in dict_D1.keys():
+            ind = dict_format[key]
+            for i in ind:
+                List_D1.insert(i,key)
+                list_values.insert(i,np.nan)
+            dict_D1 = unq_count(List_D1)
+        
+    for key in dict_format.keys():
+        if len(dict_format[key]) > len(dict_D1[key]):
+            ind = list(set(dict_format[key])-set(dict_D1[key]))        
+            for i in ind:
+                List_D1.insert(i,key)
+                list_values.insert(i,np.nan)
+            dict_D1 = unq_count(List_D1)
+    
+    return list_values, op.columns[1]
+
+    

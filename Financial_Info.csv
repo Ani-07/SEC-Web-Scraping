@@ -1,80 +1,80 @@
-Particulars,"Mar. 28, 2020","Dec. 28, 2019","Jun. 29, 2019","Mar. 30, 2019"
-"CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited) - USD ($) shares in Thousands, $ in Millions",3 Months Ended,3 Months Ended,3 Months Ended,3 Months Ended
-"CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited) - USD ($) shares in Thousands, $ in Millions","Mar. 28, 2020","Dec. 28, 2019","Jun. 29, 2019","Mar. 30, 2019"
-Net sales,"$ 58,313","$ 91,819","$ 53,809","$ 58,015"
-Cost of sales,35943,56602,33582,36194
-Gross margin,22370,35217,20227,21821
-Operating expenses:,,,,
-Research and development,4565,4451,4257,3948
-"Selling, general and administrative",4952,5197,4426,4458
-Total operating expenses,9517,9648,8683,8406
-Operating income,12853,25569,11544,13415
-"Other income/(expense), net",282,349,367,378
-Income before provision for income taxes,13135,25918,11911,13793
-Provision for income taxes,1886,3682,1867,2232
-Net income,"$ 11,249","$ 22,236","$ 10,044","$ 11,561"
-Earnings per share:,,,,
-Basic (in dollars per share),$ 2.58,$ 5.04,$ 2.20,$ 2.47
-Diluted (in dollars per share),$ 2.55,$ 4.99,$ 2.18,$ 2.46
-Shares used in computing earnings per share:,,,,
-Basic (in shares),4360101,4415040,4570633,4674071
-Diluted (in shares),4404691,4454604,4601380,4700646
-Products,,,,
-Net sales,"$ 44,965","$ 79,104","$ 42,354","$ 46,565"
-Cost of sales,31321,52075,29473,32047
-Services,,,,
-Net sales,13348,12715,11455,11450
-Cost of sales,"$ 4,622","$ 4,527","$ 4,109","$ 4,147"
-CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (Unaudited) - USD ($) $ in Millions,3 Months Ended,3 Months Ended,3 Months Ended,3 Months Ended
-CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (Unaudited) - USD ($) $ in Millions,"Mar. 28, 2020","Dec. 28, 2019","Jun. 29, 2019","Mar. 30, 2019"
-Statement of Comprehensive Income [Abstract],,,,
-Net income,"$ 11,249","$ 22,236","$ 10,044","$ 11,561"
-Other comprehensive income/(loss):,,,,
-"Change in foreign currency translation, net of tax",(566),202,(219),174
-"Change in unrealized gains/losses on derivative instruments, net of tax:",,,,
-Change in fair value of derivatives,(143),111,(108),(50)
-Change in fair value of derivatives,,,(44),(105)
-Adjustment for net (gains)/losses realized and included in net income,634,(398),(152),(155)
-Adjustment for net (gains)/losses realized and included in net income,,,,
-Total change in unrealized gains/losses on derivative instruments,491,(287),1253,2042
-Total change in unrealized gains/losses on derivative instruments,,,(22),28
-"Change in unrealized gains/losses on marketable debt securities, net of tax:",,,1231,2070
-Change in fair value of marketable debt securities,"(2,325)",125,860,2089
-Adjustment for net (gains)/losses realized and included in net income,29,(10),"$ 10,904","$ 13,650"
-Total change in unrealized gains/losses on marketable debt securities,"(2,296)",115,"Jun. 29, 2019","Mar. 30, 2019"
-Total other comprehensive income/(loss),"(2,371)",30,,
-Total comprehensive income,"$ 8,878","$ 22,266","$ 50,530","$ 37,988"
-CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited) - USD ($) $ in Millions,"Mar. 28, 2020","Dec. 28, 2019",44084,42104
-Current assets:,,,14148,15085
-Cash and cash equivalents,"$ 40,174","$ 39,771",3355,4884
-Marketable securities,53877,67391,12326,11193
-"Accounts receivable, net",15722,20970,10530,12092
-Inventories,3334,4097,134973,123346
-Vendor non-trade receivables,14955,18976,,
-Other current assets,15691,12026,115996,145319
-Total current assets,143753,163231,37636,38746
-Non-current assets:,,,33634,34587
-Marketable securities,98793,99899,187266,218652
-"Property, plant and equipment, net",35889,37031,322239,341998
-Other non-current assets,41965,40457,,
-Total non-current assets,176647,177387,29115,30443
-Total assets,320400,340618,31673,35368
-Current liabilities:,,,5434,5532
-Accounts payable,32421,45111,9953,11924
-Other current liabilities,37324,36263,13529,10505
-Deferred revenue,5928,5573,89704,93772
-Commercial paper,10029,4990,,
-Term debt,10392,10224,84936,90201
-Total current liabilities,96094,102161,51143,52165
-Non-current liabilities:,,,136079,142366
-Term debt,89086,93078,225783,236138
-Other non-current liabilities,56795,55848,,
-Total non-current liabilities,145881,148926,,
-Total liabilities,241975,251087,43371,42801
-Commitments and contingencies,,,53724,64558
-Shareholders’ equity:,,,(639),"(1,499)"
-"Common stock and additional paid-in capital, $0.00001 par value: 12,600,000 shares authorized; 4,384,959 and 4,443,236 shares issued and outstanding, respectively",48032,45972,96456,105860
-Retained earnings,33182,43977,"$ 322,239","$ 341,998"
-Accumulated other comprehensive income/(loss),"(2,789)",(418),,
-Total shareholders’ equity,78425,89531,,
-Total liabilities and shareholders’ equity,"$ 320,400","$ 340,618",,
+Particulars,"Mar. 28, 2020","Dec. 28, 2019","Jun. 29, 2019","Mar. 30, 2019","Dec. 29, 2018"
+"CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited) - USD ($) shares in Thousands, $ in Millions",3 Months Ended,3 Months Ended,3 Months Ended,3 Months Ended,3 Months Ended
+"CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited) - USD ($) shares in Thousands, $ in Millions","Mar. 28, 2020","Dec. 28, 2019","Jun. 29, 2019","Mar. 30, 2019","Dec. 29, 2018"
+Net sales,"$58,313 ","$91,819 ","$53,809 ","$58,015 ","$ 84,310"
+Cost of sales,35943,56602,33582,36194,52279
+Gross margin,22370,35217,20227,21821,32031
+Operating expenses:,,,,,
+Research and development,4565,4451,4257,3948,3902
+"Selling, general and administrative",4952,5197,4426,4458,4783
+Total operating expenses,9517,9648,8683,8406,8685
+Operating income,12853,25569,11544,13415,23346
+"Other income/(expense), net",282,349,367,378,560
+Income before provision for income taxes,13135,25918,11911,13793,23906
+Provision for income taxes,1886,3682,1867,2232,3941
+Net income,"$11,249 ","$22,236 ","$10,044 ","$11,561 ","$ 19,965"
+Earnings per share:,,,,,
+Basic (in dollars per share),$2.58 ,$5.04 ,$2.20 ,$2.47 ,$ 4.22
+Diluted (in dollars per share),$2.55 ,$4.99 ,$2.18 ,$2.46 ,$ 4.18
+Shares used in computing earnings per share:,,,,,
+Basic (in shares),4360101,4415040,4570633,4674071,4735820
+Diluted (in shares),4404691,4454604,4601380,4700646,4773252
+Products,,,,,
+Net sales,"$44,965 ","$79,104 ","$42,354 ","$46,565 ","$ 73,435"
+Cost of sales,31321,52075,29473,32047,48238
+Services,,,,,
+Net sales,13348,12715,11455,11450,10875
+Cost of sales,"$4,622 ","$4,527 ","$4,109 ","$4,147 ","$ 4,041"
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (Unaudited) - USD ($) $ in Millions,3 Months Ended,3 Months Ended,3 Months Ended,3 Months Ended,3 Months Ended
+CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (Unaudited) - USD ($) $ in Millions,"Mar. 28, 2020","Dec. 28, 2019","Jun. 29, 2019","Mar. 30, 2019","Dec. 29, 2018"
+Statement of Comprehensive Income [Abstract],,,,,
+Net income,"$11,249 ","$22,236 ","$10,044 ","$11,561 ","$ 19,965"
+Other comprehensive income/(loss):,,,,,
+"Change in foreign currency translation, net of tax",-566,202,-219,174,(78)
+"Change in unrealized gains/losses on derivative instruments, net of tax:",,,,,
+Change in fair value of derivatives,-143,111,-108,-50,(334)
+Change in fair value of derivatives,,,-44,-105,42
+Adjustment for net (gains)/losses realized and included in net income,634,-398,-152,-155,(292)
+Adjustment for net (gains)/losses realized and included in net income,,,,,
+Total change in unrealized gains/losses on derivative instruments,491,-287,1253,2042,110
+Total change in unrealized gains/losses on derivative instruments,,,-22,28,37
+"Change in unrealized gains/losses on marketable debt securities, net of tax:",,,1231,2070,147
+Change in fair value of marketable debt securities,"-2,325",125,860,2089,(223)
+Adjustment for net (gains)/losses realized and included in net income,29,-10,"$10,904 ","$13,650 ","$ 19,742"
+Total change in unrealized gains/losses on marketable debt securities,"-2,296",115,"Jun. 29, 2019","Mar. 30, 2019","Dec. 29, 2018"
+Total other comprehensive income/(loss),"-2,371",30,,,
+Total comprehensive income,"$8,878 ","$22,266 ","$50,530 ","$37,988 ","$ 44,771"
+CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited) - USD ($) $ in Millions,"Mar. 28, 2020","Dec. 28, 2019",44084,42104,41656
+Current assets:,,,14148,15085,18077
+Cash and cash equivalents,"$40,174 ","$39,771 ",3355,4884,4988
+Marketable securities,53877,67391,12326,11193,18904
+"Accounts receivable, net",15722,20970,10530,12092,12432
+Inventories,3334,4097,134973,123346,140828
+Vendor non-trade receivables,14955,18976,,,
+Other current assets,15691,12026,115996,145319,158608
+Total current assets,143753,163231,37636,38746,39597
+Non-current assets:,,,33634,34587,34686
+Marketable securities,98793,99899,187266,218652,232891
+"Property, plant and equipment, net",35889,37031,322239,341998,373719
+Other non-current assets,41965,40457,,,
+Total non-current assets,176647,177387,29115,30443,44293
+Total assets,320400,340618,31673,35368,36703
+Current liabilities:,,,5434,5532,5546
+Accounts payable,32421,45111,9953,11924,11969
+Other current liabilities,37324,36263,13529,10505,9772
+Deferred revenue,5928,5573,89704,93772,108283
+Commercial paper,10029,4990,,,
+Term debt,10392,10224,84936,90201,92989
+Total current liabilities,96094,102161,51143,52165,54555
+Non-current liabilities:,,,136079,142366,147544
+Term debt,89086,93078,225783,236138,255827
+Other non-current liabilities,56795,55848,,,
+Total non-current liabilities,145881,148926,,,
+Total liabilities,241975,251087,43371,42801,40970
+Commitments and contingencies,,,53724,64558,80510
+Shareholders’ equity:,,,-639,"-1,499","(3,588)"
+"Common stock and additional paid-in capital, $0.00001 par value: 12,600,000 shares authorized; 4,384,959 and 4,443,236 shares issued and outstanding, respectively",48032,45972,96456,105860,117892
+Retained earnings,33182,43977,"$322,239 ","$341,998 ","$ 373,719"
+Accumulated other comprehensive income/(loss),"-2,789",-418,,,
+Total shareholders’ equity,78425,89531,,,
+Total liabilities and shareholders’ equity,"$320,400 ","$340,618 ",,,
