@@ -11,7 +11,7 @@ from SEC_Doc_Info__Scraping_v2 import doc_info
 
 # We shall use this script to track and extract financial Information
 
-with open('aapl_links.json') as json_file:
+with open(r"Apple Inc10-K_links.json") as json_file:
     aapl_links = json.load(json_file)
 
 df = pd.read_csv('format.csv', index_col = False)

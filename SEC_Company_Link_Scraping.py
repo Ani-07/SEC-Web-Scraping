@@ -13,7 +13,7 @@ import json
 
 # Example stock - Apple Inc
 
-stock = "Apple Inc"
+cik = comp_list[10]
 
 # base URL for the SEC EDGAR browser
 endpoint = r"https://www.sec.gov/cgi-bin/browse-edgar"
@@ -22,7 +22,7 @@ endpoint = r"https://www.sec.gov/cgi-bin/browse-edgar"
 param_dict = {'action':'getcompany',
               'owner':'exclude',
               'type':'10-Q',
-              'company':stock,
+              'CIK': cik,
               'count':'100'}
 
 # request the url, and then parse the response.
