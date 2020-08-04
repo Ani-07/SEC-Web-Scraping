@@ -61,21 +61,67 @@ for name in sec_data.columns[8:105]:
     print(name)
     sec_data[name] = sec_data[name].apply(normalize_data, args = (max(sec_data[name]), min(sec_data[name])))
 
-sec_1 = [105] + list(range(8,105)) + [1]
-sec_2 = [105] + list(range(8,105)) + [2]
-sec_4 = [105] + list(range(8,105)) + [4]
-sec_6 = [105] + list(range(8,105)) + [6]
+# Now let us take the numerical columns and compute the correlation matrix
 
-sec_data_1 = sec_data.iloc[:,sec_1]
-sec_data_2 = sec_data.iloc[:,sec_2]
-sec_data_4 = sec_data.iloc[:,sec_4]
-sec_data_6 = sec_data.iloc[:,sec_6]
+sec_data_num = sec_data.iloc[:,8:105]
 
-sec_data.to_csv("sec_fin_cleaned.csv")
-sec_data_1.to_csv("sec_fin_1.csv")
-sec_data_2.to_csv("sec_fin_2.csv")
-sec_data_4.to_csv("sec_fin_4.csv")
-sec_data_6.to_csv("sec_fin_6.csv")
+# First compute a correlation matrix to observe the amount of correlation between data points
 
+corr_mat = sec_data_num.corr()
+
+# Let us see the number of variables with correlation of more than 0.9
+
+N = corr_mat.shape[0]
+
+high_corr = []
+
+for i in range(N):
+    for j in range(i,N):
+        if corr_mat.iloc[i,j] >= 0.90 or corr_mat.iloc[i,j] <= -0.90:
+            tmp = [i,j]
+            high_corr.append(tmp)
+
+added = []
+removed = []
+
+# We now have pairs of variables with more than 0.9 correlation.
+# We will now keep 1 column from each pair of highly correlated pairs in our dataset 
+# and remove the others. We will also ensure that there are no duplications.
+
+for pair in high_corr:
+    i, j = pair
+    if i == j:
+        continue
+    if i in added or j in added or i in removed or j in removed:
+        continue
+    else:
+        added.append(i)
+        removed.append(j)
+
+
+sec_data_shrunk = sec_data_num.drop(sec_data_num.columns[removed], axis = 1)
+
+# This will now become our set of features to work with for training our models
+
+sec_data_shrunk.to_csv("sec_fin_features.csv", index = False)
+
+
+# Create separate datasets for each prediction label
+
+sec_labels_1 = sec_data.iloc[:,1]
+sec_labels_2 = sec_data.iloc[:,2]
+sec_labels_4 = sec_data.iloc[:,4]
+sec_labels_6 = sec_data.iloc[:,6]
+sec_index = sec_data.iloc[:,105]
+
+
+
+# Save each dataset as a csv file
+
+sec_labels_1.to_csv("sec_fin_1.csv", index = False)
+sec_labels_2.to_csv("sec_fin_2.csv", index = False)
+sec_labels_4.to_csv("sec_fin_4.csv", index = False)
+sec_labels_6.to_csv("sec_fin_6.csv", index = False)
+sec_index.to_csv("sec_index.csv", index = False)
 
 
