@@ -34,7 +34,7 @@ from pandas_datareader import data
 import pandas as pd
 from datetime import datetime,timedelta
 
-features = pd.read_csv("Tech companies_data.csv")
+features_1 = pd.read_csv("Tech companies_data.csv")
 
 ##############################################################################
 
@@ -52,6 +52,8 @@ features = features.drop(list(range(1230,1243))) #UNDT Removal
 
 features = features.drop(list(range(1355,1371))) #MMTC Removal
 
+features = features.drop(list(range(1412,1413))) #MMTC Removal
+
 features = features.drop(list(range(1543,1553))) #EMIS Removal
 
 features = features.drop(list(range(1553,1580))) #BFYT Removal
@@ -64,11 +66,13 @@ features = features.drop(list(range(1658,1671)))
 
 features = features.drop(list(range(1775,1780))) 
 
-features = features.drop(list(range(1892,1894))) 
+features = features.drop(list(range(1892,1897))) 
 
 features = features.drop(list(range(2206,2212))) 
 
 features = features.drop(list(range(2532,2541))) 
+
+features = features.drop(list(range(2645,2646))) 
 
 features = features.drop(list(range(3298,3303))) 
 
@@ -78,9 +82,11 @@ features = features.drop(list(range(5678,5679)))
 
 features = features.drop(list(range(6212,6220))) 
 
+features = features.drop(list(range(6141,6149))) 
+
 features = features.drop(list(range(7081,7086))) 
 
-features = features.drop(list(range(7212,7222))) 
+features = features.drop(list(range(7212,7224))) 
 
 features = features.drop(list(range(7458,7460))) 
 
@@ -124,7 +130,8 @@ for ticker in avg_tick.keys():
                         
 ############################################################################
 
-remove_list = ["RTKHQ", "KTEC", "KULR","EXAC", "EDGW", "XPLR", "SOYL", "XRM", "MYOS"]
+remove_list = ["RTKHQ", "KTEC", "KULR","EXAC", "EDGW", "XPLR", "SOYL", "XRM", 
+               "MYOS", "SEH", "CMVT"]
 
 for ticker in remove_list:
     features = features[features["Ticker Symbol"] != ticker]
